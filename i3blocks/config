@@ -48,7 +48,7 @@ interval=5
 
 [separator]
 [diskusage]
-command=$ScriptsPath/sb-disk
+command=$ScriptsPath/disk-v2.py
 interval=60
 
 [separator]
