@@ -9,7 +9,7 @@ separator_block_width=1
 ###############################
 [separator]
 [name]
-command=echo "Yassa's Arch"
+command=echo "Yassa's Arch"; i3-msg exec python3 /home/yassa/.scripts/bible/main.py
 interval=once
 ###############################
 
