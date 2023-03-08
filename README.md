@@ -1,2 +1,2 @@
 # linux_configs
-My config files for i3wm,i3blocks, other applications and packages
+My config files for dunst, i3wm, i3blocks, ranger & maybe other applets or packages ...
