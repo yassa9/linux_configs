@@ -1,16 +1,16 @@
-
 # separator styles and colors
 full_text=|
 align=center
-color=#ffff00
+color=#8AC701
 separator=false
 separator_block_width=1
 # font=1
+
 ###############################
 [separator]
 [name]
-command=echo "Yassa's Arch"; i3-msg exec python3 /home/yassa/.scripts/bible/main.py
-interval=once
+command=echo "😜 Yassa's Arch"; i3-msg exec python3 /home/yassa/.scripts/bible/main.py
+interval=600
 ###############################
 
 [separator]
@@ -37,13 +37,13 @@ signal=2
 
 [separator]
 [brightness]
-command=$ScriptsPath/sb-brightness
+command=$ScriptsPath/bright-python.py
 interval=once
 signal=3
 
 [separator]
 [vnstat]
-command=$ScriptsPath/vnstat.sh
+command=$ScriptsPath/net-usage.py
 interval=5
 
 [separator]
@@ -71,5 +71,3 @@ interval=3
 command=$ScriptsPath/sb-langprint
 interval=once
 signal=1
-
-[separator]
