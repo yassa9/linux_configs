@@ -48,7 +48,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 bindsym $mod+l exec "xscreensaver-command -lock"
 exec --no-startup-id xscreensaver --no-splash
-exec "xautolock -detectsleep -time 3 -locker \"xscreensaver-command -lock\""
+exec "xautolock -detectsleep -time 10 -locker \"xscreensaver-command -lock\""
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -57,14 +57,15 @@ exec --no-startup-id nm-applet
 bindsym ctrl+space exec --no-startup-id rofi -show drun -show-icons -font "monospace 16" -theme Monokai 
 
 # Screenshot
-bindsym $mod+Shift+s exec shotgun
+exec --no-startup-id flameshot & disown
+bindcode 107 exec flameshot gui
 
 # Wallpaper
 exec --no-startup-id nitrogen --set-zoom-fill /mnt/CHAOS/W/wallpapers\_v2/lab.png
 
 # BRIGHTNESS
-bindcode 233 exec xbacklight -inc 3 &&  pkill -RTMIN+3 i3blocks
-bindcode 232 exec xbacklight -dec 3 &&  pkill -RTMIN+3 i3blocks
+bindcode 233 exec xbacklight -inc 4 &&  pkill -RTMIN+3 i3blocks
+bindcode 232 exec xbacklight -dec 4 &&  pkill -RTMIN+3 i3blocks
 
 # MUSIC CONTROL
 bindsym XF86AudioPrev exec rhythmbox-client --previous
@@ -77,7 +78,11 @@ exec --no-startup-id copyq & copyq hide
 # locklang_problem
 exec --no-startup-id perl /home/yassa/.scripts/locklang
 
+# XSCT screen temperature
+exec --no-startup-id xsct 3350
 
+# XOURNAL++
+bindsym $mod+Shift+x exec xournalpp & disownf
 
 
 
@@ -101,7 +106,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+space exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -241,9 +246,20 @@ bar {
         status_command i3blocks
         status_command ScriptsPath=~/.scripts/statusbar i3blocks
         position top 
-        font pango:monospace 15
-
+        font pango:Hack 13
 }
 
 
-bindsym $mod+space exec --no-startup-id $scriptspath/sb-language exec --no-startup-id  && pkill -RTMIN+1 i3blocks
+bindsym ctrl+Return exec --no-startup-id $scriptspath/sb-language exec --no-startup-id  && pkill -RTMIN+1 i3blocks
+
+
+
+
+
+
+
+
+
+
+
+
