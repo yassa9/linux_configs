@@ -61,7 +61,7 @@ exec --no-startup-id flameshot & disown
 bindcode 107 exec flameshot gui
 
 # Wallpaper
-exec --no-startup-id nitrogen --set-zoom-fill /mnt/CHAOS/W/wallpapers\_v2/lab.png
+exec --no-startup-id nitrogen --set-zoom-fill /mnt/CHAOS/W/wallpapers\_v2/road.jpg
 
 # BRIGHTNESS
 bindcode 233 exec xbacklight -inc 4 &&  pkill -RTMIN+3 i3blocks
