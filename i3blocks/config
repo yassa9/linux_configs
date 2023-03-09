@@ -1,7 +1,7 @@
 # separator styles and colors
 full_text=|
 align=center
-color=#8AC701
+color=#FFFFFF
 separator=false
 separator_block_width=1
 # font=1
@@ -9,7 +9,7 @@ separator_block_width=1
 ###############################
 [separator]
 [name]
-command=echo "😜 Yassa's Arch"; i3-msg exec python3 /home/yassa/.scripts/bible/main.py
+command=echo "⚔️ Yassa's Arch"; i3-msg exec python3 /home/yassa/.scripts/bible/main.py
 interval=600
 ###############################
 
@@ -71,3 +71,5 @@ interval=3
 command=$ScriptsPath/sb-langprint
 interval=once
 signal=1
+
+[separator]
