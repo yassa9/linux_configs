@@ -16,11 +16,16 @@ interval=600
 
 [separator]
 [fact]
-command=echo "💡"; i3-msg exec python3 /home/yassa/.scripts/statusbar/fact.py
+command=echo " 💡 "; i3-msg exec python3 /home/yassa/.scripts/statusbar/fact.py
 interval=3600
 
 [separator]
 [weather]
+command=echo " ⚽ "; i3-msg exec python3 /home/yassa/.scripts/statusbar/kora.py
+interval=once
+
+[separator]
+[kooora]
 command=echo " ☀️ "; i3-msg exec python3 /home/yassa/.scripts/statusbar/we.py
 interval=7200
 
@@ -82,5 +87,4 @@ interval=3
 command=$ScriptsPath/sb-langprint
 interval=once
 signal=1
-
 [separator]
