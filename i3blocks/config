@@ -1,7 +1,7 @@
 # separator styles and colors
 full_text=|
 align=center
-color=#FFFFFF
+color=#F79153
 separator=false
 separator_block_width=1
 # font=1
@@ -9,9 +9,20 @@ separator_block_width=1
 ###############################
 [separator]
 [name]
+
 command=echo "⚔️ Yassa's Arch"; i3-msg exec python3 /home/yassa/.scripts/bible/main.py
 interval=600
 ###############################
+
+[separator]
+[fact]
+command=echo "💡"; i3-msg exec python3 /home/yassa/.scripts/statusbar/fact.py
+interval=3600
+
+[separator]
+[weather]
+command=echo " ☀️ "; i3-msg exec python3 /home/yassa/.scripts/statusbar/we.py
+interval=7200
 
 [separator]
 [temp]
@@ -58,7 +69,7 @@ interval=5
 
 [separator]
 [time]
-command=$ScriptsPath/sb-clock
+command=$ScriptsPath/time.py
 interval=1
 
 [separator]
