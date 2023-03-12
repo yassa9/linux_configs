@@ -24,7 +24,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = 350
 
     # The maximum height of a single notification, excluding the frame.
     height = 300
@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = 10x55
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -87,10 +87,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#8AC701"
+    frame_color = "#F79153"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -118,7 +118,7 @@
 
     ### Text ###
 
-    font = Monospace 15
+    font = DejaVu Sans 15
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -422,10 +422,13 @@
 #    summary = "foobar"
 #    history_ignore = yes
 
-#[skip-display]
+[skip-display]
 #    # This notification will not be displayed, but will be included in the history
 #    summary = "foobar"
 #    skip_display = yes
+appname=network-manager-applet
+skip_display=true
+
 
 #[signed_on]
 #    appname = Pidgin
@@ -452,3 +455,4 @@
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+
