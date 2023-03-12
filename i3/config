@@ -84,6 +84,16 @@ exec --no-startup-id xsct 3350
 # XOURNAL++
 bindsym $mod+Shift+x exec xournalpp & disownf
 
+# Set the default window border colors
+client.focused          #A7471F #A7471F #A7471F #A7471F
+client.focused_inactive #333333 #333333 #333333 #333333
+client.unfocused        #333333 #333333 #333333 #333333
+client.urgent           #ff0000 #ff0000 #ff0000 #ff0000
+
+
+
+
+
 
 
 
@@ -110,6 +120,7 @@ bindsym $mod+space exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
+bindsym $mod+Arabic_dad kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -151,6 +162,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Arabic_beh fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -247,12 +259,18 @@ bar {
         status_command ScriptsPath=~/.scripts/statusbar i3blocks
         position top 
         font pango:Hack 13
+        colors {
+                focused_workspace #A7471F #A7471F #FFFFFF
+                
+        }
 }
 
+default_border pixel 
+default_floating_border pixel 1
 
-bindsym ctrl+Return exec --no-startup-id $scriptspath/sb-language exec --no-startup-id  && pkill -RTMIN+1 i3blocks
+bindsym ctrl+Return exec --no-startup-id $scriptspath/sb-language && pkill -RTMIN+1 i3blocks
 
-
+exec --no-startup-id $scriptspath/autolang.sh 
 
 
 
