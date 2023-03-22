@@ -20,6 +20,7 @@ alias version="sed -n 1p /etc/os-release && sed -n 11p /etc/os-release && sed -n
 #Verses Shortcuts
 alias versehis="dunstctl history-pop"
 alias verseimp="s /mnt/CHAOS/T/txt_lists/verses_imp.txt"
+alias verseord="s /home/yassa/.scripts/bible/verses_order.csv"
 
 #Pacman Shortcuts
 alias sync="sudo pacman -Syyy"
@@ -54,6 +55,9 @@ alias hackmap="mapscii"
 alias his="history"
 alias delh="history -d -5--1"
 alias testping="ping www.google.com"
+alias i3conf="s .config/i3/config"
+alias i3block="s .config/i3blocks/config"
+alias scripts="cd .scripts/statusbar"
 #################################################
 alias j="ranger /home/yassa/junior_2nd_term"
 alias hot="ranger /mnt/CHAOS/H/hot\ courses"
@@ -63,6 +67,7 @@ alias x="exit"
 alias ee="exit"
 alias s="subl"
 alias r="ranger"
+alias p="python3"
 alias pp="poweroff"
 
 
