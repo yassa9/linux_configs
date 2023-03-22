@@ -1,7 +1,7 @@
 # separator styles and colors
 full_text=|
 align=center
-color=#F79153
+color=#FDE18E
 separator=false
 separator_block_width=1
 # font=1
@@ -9,25 +9,34 @@ separator_block_width=1
 ###############################
 [separator]
 [name]
-
 command=echo "⚔️ Yassa's Arch"; i3-msg exec python3 /home/yassa/.scripts/bible/main.py
 interval=600
 ###############################
 
 [separator]
-[fact]
-command=echo " 💡 "; i3-msg exec python3 /home/yassa/.scripts/statusbar/fact.py
-interval=3600
+[spanish]
+command=echo " 🇪🇸 "; i3-msg exec python3 /home/yassa/.scripts/spanish/spphrase.py
+interval=3480	# 58 mins
 
 [separator]
-[weather]
-command=echo " ⚽ "; i3-msg exec python3 /home/yassa/.scripts/statusbar/kora.py
-interval=once
+[fact]
+command=echo " 💡 "; i3-msg exec python3 /home/yassa/.scripts/statusbar/fact.py
+interval=4800	# 80 mins
 
 [separator]
 [kooora]
-command=echo " ☀️ "; i3-msg exec python3 /home/yassa/.scripts/statusbar/we.py
-interval=7200
+command=echo " ⚽ "; i3-msg exec python3 /home/yassa/.scripts/statusbar/kooora.py
+interval=once
+
+[separator]
+[weather]
+command=echo " 📐 "; i3-msg exec python3 /home/yassa/.scripts/statusbar/we.py
+interval=3600
+
+[separator]
+[stocks]
+command=echo " 📈 "; i3-msg exec python3 /home/yassa/.scripts/statusbar/stocks.py
+interval=9000	# 150 mins
 
 [separator]
 [temp]
@@ -36,7 +45,7 @@ interval=10
 
 [separator]
 [uptime]
-command=$ScriptsPath/sb-uptime
+command=$ScriptsPath/uptime2.py
 interval=60
 
 [separator]
@@ -83,8 +92,17 @@ command=$ScriptsPath/sb-battery
 interval=3
 
 [separator]
+[numlock]
+command=$ScriptsPath/num.sh
+interval=1
+signal=1
+
+
+[separator]
 [language]
 command=$ScriptsPath/sb-langprint
 interval=once
 signal=1
+
 [separator]
+[sep]
