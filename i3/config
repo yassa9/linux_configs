@@ -46,7 +46,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 
 
-bindsym $mod+l exec "xscreensaver-command -lock"
+bindsym $mod+z exec "xscreensaver-command -lock"
 exec --no-startup-id xscreensaver --no-splash
 exec "xautolock -detectsleep -time 10 -locker \"xscreensaver-command -lock\""
 
@@ -61,7 +61,7 @@ exec --no-startup-id flameshot & disown
 bindcode 107 exec flameshot gui
 
 # Wallpaper
-exec --no-startup-id nitrogen --set-zoom-fill /mnt/CHAOS/W/wallpapers\_v2/road.jpg
+exec --no-startup-id nitrogen --set-zoom-fill /mnt/CHAOS/W/wallpapers\_v2/anubis.png
 
 # BRIGHTNESS
 bindcode 233 exec xbacklight -inc 4 &&  pkill -RTMIN+3 i3blocks
@@ -85,7 +85,7 @@ exec --no-startup-id xsct 3350
 bindsym $mod+Shift+x exec xournalpp & disownf
 
 # Set the default window border colors
-client.focused          #A7471F #A7471F #A7471F #A7471F
+client.focused          #FDE18E #FDE18E #FDE18E #FDE18E
 client.focused_inactive #333333 #333333 #333333 #333333
 client.unfocused        #333333 #333333 #333333 #333333
 client.urgent           #ff0000 #ff0000 #ff0000 #ff0000
@@ -206,6 +206,39 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+# Set gaps between windows
+# gaps inner 7
+
+# Set MPV to fullscreen
+for_window [class="mpv"] fullscreen
+
+# Start Alacritty with a smaller width
+for_window [class="Alacritty"] resize set 30 ppt 50 ppt
+
+# Set keyboard repeat delay to 200 ms
+exec --no-startup-id xset r rate 150 35
+
+# Set keyboard repeat rate to 50 Hz
+exec --no-startup-id xset r rate 150 35
+
+
+##############################################
+
+# Switch to the next workspace when $mod+Tab is pressed
+bindsym $mod+Tab workspace next 
+
+# Switch to the previous workspace when $mod+Tab is pressed
+bindsym $mod+Shift+Tab workspace prev
+
+##############################################
+assign [class="Rhythmbox"] 4
+
+
+
+
+
+
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -239,10 +272,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 12 px or 12 ppt
+        bindsym Down resize grow height 12 px or 12 ppt
+        bindsym Up resize shrink height 12 px or 12 ppt
+        bindsym Right resize grow width 12 px or 12 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -258,10 +291,10 @@ bar {
         status_command i3blocks
         status_command ScriptsPath=~/.scripts/statusbar i3blocks
         position top 
-        font pango:Hack 13
+        font pango:Hack 12
         colors {
-                focused_workspace #A7471F #A7471F #FFFFFF
-                
+                focused_workspace #FDE18E #FDE18E #303030
+                background #303030
         }
 }
 
@@ -269,6 +302,7 @@ default_border pixel
 default_floating_border pixel 1
 
 bindsym ctrl+Return exec --no-startup-id $scriptspath/sb-language && pkill -RTMIN+1 i3blocks
+exec always --no-startup-id $scriptspath/num.sh && pkill -RTMIN+1 i3blocks
 
 exec --no-startup-id $scriptspath/autolang.sh 
 
